@@ -26,31 +26,35 @@ function App() {
     case "stop":
       return (
         <div className="App app-root">
-          <h1>Timer</h1>
+          <h1 data-xstate={current.value}>Timer</h1>
           <CurrentTime currentTime={current.context.currentTime} />
 
           <div className="buttons-group">
-            {current.can("RESET") && (
-              <button className="reset-button" onClick={() => send("RESET")}>
-                reset
+            {current.can("CLEAR") && (
+              <button className="clear-button" onClick={() => send("CLEAR")}>
+                clear all
               </button>
             )}
+
             {current.can("SET_INTERVAL") && (
               <button className="green" onClick={() => send("SET_INTERVAL")}>
                 interval
               </button>
             )}
+
             {current.can("STOP_TIME") && (
-              <button onClick={() => send("STOP_TIME")}>stop time</button>
+              <button className="stop-button" onClick={() => send("STOP_TIME")}>
+                stop time
+              </button>
             )}
             {current.can("CONTINUE") && (
               <button className="green" onClick={() => send("CONTINUE")}>
                 continue
               </button>
             )}
-            {current.can("CLEAR") && (
-              <button className="clear-button" onClick={() => send("CLEAR")}>
-                clear all
+            {current.can("RESET") && (
+              <button className="reset-button" onClick={() => send("RESET")}>
+                reset
               </button>
             )}
           </div>

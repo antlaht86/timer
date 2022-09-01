@@ -8,6 +8,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   --reset-color: #ddea36;
+  --stop-color: #dcdc8a;
 
 
   font-synthesis: none;
@@ -78,11 +79,26 @@ button:focus-visible {
 .reset-button {
   color: var(--reset-color)
 }
+.stop-button {
+  color:  var(--stop-color);
+}
 .clear-button {
   color: #c22a30;
 }
 .green {
   color: #1fcd45;
+}
+
+[data-xstate="time_running"] {
+  color: #1fcd45;
+  transition: color 0.75s ease;
+
+}
+
+[data-xstate="stop"] {
+  color: var(--stop-color);
+  transition: color 0.75s ease;
+
 }
 
 @media (prefers-color-scheme: light) {
