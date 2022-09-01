@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.root > h3 {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    min-width: 45px;
+}
